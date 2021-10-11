@@ -12,9 +12,10 @@ params:
 
 artifacts: 
   artifacts_dir: artifacts_dir
-  model_dr: model
+  model_dir: model
   plots_dr: plots
   checkpoint_dr: checkpoints
+  model_name: model.h5
 
 logs:
   logs_dir: logs_dr
