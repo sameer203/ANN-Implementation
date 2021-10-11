@@ -36,14 +36,10 @@ def training(config_path):
     plot_name = config["artifacts"]["plot_name"]
     plot_dir = config["artifacts"]["plots_dir"]
 
-    pd.DataFrame(history.history).plot(figsize=(8, 5))
-    plt.grid(True)
-    plt.gca().set_ylim(0, 1)
-    plt.plot()
-
+    loss_accuracy = history.history
     plot_dir_path = os.path.join(artifacts_dir, plot_dir)
     os.makedirs(plot_dir_path, exist_ok=True)
-    save_plot(model, plot_name, plot_dir_path)
+    save_plot(loss_accuracy, plot_name, plot_dir_path)
 
     #print(config)
 

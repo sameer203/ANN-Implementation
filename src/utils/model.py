@@ -29,7 +29,11 @@ def save_model(model, model_name, model_dir):
     path_to_model = os.path.join(model_dir, unique_filename)
     model.save(path_to_model)
 
-def save_plot(model, plot_name, model_dir):
+def save_plot(loss_accuracy, plot_name, model_dir):
+    pd.DataFrame(loss_accuracy).plot(figsize=(8, 5))
+    plt.grid(True)
+    plt.gca().set_ylim(0, 1)
+    plt.plot()
     unique_filename = get_unique_filename(plot_name)
     path_to_model = os.path.join(model_dir, unique_filename)
     plt.savefig(path_to_model)
